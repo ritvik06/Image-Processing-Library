@@ -1,0 +1,17 @@
+--------FOR MKL -----------------------------------------------------------------------------------------------------------------------------------
+#Inside Intel C/C++ Compiler
+ your_path = C:\Users\HP\Downloads\2017CS10387_2017CS50417\Week2>
+# Give Command For Compilation 
+# cl Week2_MKL.cpp  mkl_intel_lp64_dll.lib mkl_intel_thread_dll.lib mkl_core_dll.lib libiomp5md.lib
+# Week2_MKL [--commands--]
+
+--------FOR Openblas --------------------------------------------------------------------------------------------------------------------------------
+#Inside Ubuntu For Windows 
+your_path = /home/rvij
+CXXXFLAG = -I ~/OpenBLAS/include/ -L ~/OpenBLAS/lib -lpthread -lgfortran
+ACTIVATE_OPENBLAS = -I ~/OpenBLAS/include/ -L ~/OpenBLAS/lib/ -lopenblas -lpthread
+LDFLAGS =  -L ~/intel/mkl/lib/intel64 -Wl,--no-as-needed -lpthread -lm -ldl -m64 -I ~/intel/mkl/include
+
+g++ -std==c++11 -o week2 week2.cpp openblas_apply.o $(ACTIVATE_OPENBLAS) $(LDFLAGS) -o imager
+
+g++ -std=c++11 -o Week1 Week1.cpp -I /"C:/OpenBLAS-0.2.20/OpenBLAS-0.2.20"/OpenBLAS/include/ -L/your_path/OpenBLAS/lib -lopenblas -lm -lpthread
